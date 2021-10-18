@@ -1,0 +1,35 @@
+﻿@model WebApplication5.Models.Phone
+   
+
+@{
+    ViewBag.Title = "Добавление телфона";
+}
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="Model" class="control-label">Название модели</label>
+        <input type="text" asp-for="Model" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Company" class="control-label">Компания</label>
+        <input type="text" asp-for="Company" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label">Цена</label>
+        <input type="number" asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="OS" class="control-label">Операционная система</label>
+        <input type="text" asp-for="OS" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label">Описание</label>
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="YearOfRelease" class="control-label">Год выпуска</label>
+        <input type="number" asp-for="YearOfRelease" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>

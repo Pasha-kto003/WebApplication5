@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebApplication5.Models.Phone>
+@{
+    ViewBag.Title = "Весь каталог";
+}
+<h4>@ViewData["content"]</h4>
+<a asp-action="Create">Добавить пользователя</a>
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Model</td>
+            <td>
+                <a asp-action="Details" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+    }
+</table>

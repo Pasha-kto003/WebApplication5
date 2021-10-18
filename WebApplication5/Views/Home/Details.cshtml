@@ -1,0 +1,22 @@
+﻿@model WebApplication5.Models.Phone
+@{
+    ViewBag.Title = Model.Model;
+}
+
+<h2>Телефон @Model.Model</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Идентификатор</dt>
+        <dd>@Model.ID</dd>
+        <dt>Компания</dt>
+        <dd>@Model.Company</dd>
+        <dt>Цена</dt>
+        <dd>@Model.Price</dd>
+        <dt>Операционная система</dt>
+        <dd>@Model.ID</dd>
+        <dt>Описание</dt>
+        <dd>@Model.Description</dd>
+        <dt>Дата выхода</dt>
+        <dd>@Model.YearOfRelease</dd>
+    </dl>
+</div>
