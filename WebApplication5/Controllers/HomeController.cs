@@ -26,7 +26,7 @@ namespace WebApplication5.Controllers
         public async Task<IActionResult> Index()
         {
             string role = User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value;
-            ViewData["content"] = $"ваша роль {role}";
+            ViewData["content"] = $"Теперь ваша роль {role}";
             return View(await db.Phones.ToListAsync());
 
         }
