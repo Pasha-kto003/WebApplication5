@@ -102,10 +102,13 @@ namespace WebApplication5.Controllers
         [Authorize(Roles = "admin, user")]
         public async Task<IActionResult> Personal_Area()
         {
+
             var email = User.Identity.Name;
             if (email != null)
             {
                 User user = await _context.Users.FirstOrDefaultAsync(p => p.Email == email);
+                string role = User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value;
+                ViewData["content"] = $"Теперь ваша роль {role}";
                 if (user != null)
                     return View(user);
             }

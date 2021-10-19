@@ -2,19 +2,18 @@
 @{
     ViewBag.Title = "О пользователе";
     ViewBag.Title = Model.Email;
-}
 
+}
+<h4>@ViewData["content"]</h4>
 <h2>Пользователь @Model.Email</h2>
 <div>
     <dl class="dl-horizontal">
         <dt>Почта</dt>
         <dd>@Model.Email</dd>
-        <dt>Роль</dt>
-        <dd>@Model.Role</dd>
-        <dt>Цена</dt>
+        <dt>Пароль</dt>
         <dd>@Model.Password</dd>
         <dt>Идентификатор</dt>
         <dd>@Model.Id</dd>
-        <dt>Описание</dt>
+        
     </dl>
 </div>
