@@ -4,32 +4,66 @@
 @{
     ViewBag.Title = "Добавление телфона";
 }
-<form asp-action="create" asp-controller="home">
-    <div class="form-group">
-        <label asp-for="Model" class="control-label">Название модели</label>
-        <input type="text" asp-for="Model" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Company" class="control-label">Компания</label>
-        <input type="text" asp-for="Company" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Price" class="control-label">Цена</label>
-        <input type="number" asp-for="Price" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="OS" class="control-label">Операционная система</label>
-        <input type="text" asp-for="OS" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Description" class="control-label">Описание</label>
-        <input type="text" asp-for="Description" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="YearOfRelease" class="control-label">Год выпуска</label>
-        <input type="number" asp-for="YearOfRelease" class="form-control" />
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Отправить" class="btn btn-default" />
-    </div>
-</form>
+<div class="container text-center align-middle d-flex justify-content-center">
+    <form asp-action="create" asp-controller="home">
+        <div class="form-group">
+            <label asp-for="Model" class="control-label">Название модели</label>
+            <input type="text" asp-for="Model" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Company" class="control-label">Компания</label>
+            <input type="text" asp-for="Company" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="control-label">Цена</label>
+            <input type="number" asp-for="Price" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="OS" class="control-label">Операционная система</label>
+            <input type="text" asp-for="OS" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label">Описание</label>
+            <input type="text" asp-for="Description" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="YearOfRelease" class="control-label">Год выпуска</label>
+            <input type="number" asp-for="YearOfRelease" class="form-control" />
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Создать телефон
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Вы уверены что хотите создать телефон
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div class="form-group">
+                            <input type="submit" value="Создать телефон" class="btn btn-primary btn-lg active" role="button" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*
+        <div class="form-group">
+        <input type="submit" value="Создать телефон" class="btn btn-primary btn-lg active" role="button" />
+         </div>
+        *@
+
+        @*<div class="form-group">
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>*@
+    </form>
+</div>
+    

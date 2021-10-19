@@ -100,14 +100,16 @@ namespace WebApplication5.Controllers
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create(Phone phone)
         {
+          
             db.Phones.Add(phone);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
         [Authorize(Roles = "admin, user")]
         public IActionResult About()
         {
-            return Content("Вход только для администратора");
+            return View();
         }
     }
 }
