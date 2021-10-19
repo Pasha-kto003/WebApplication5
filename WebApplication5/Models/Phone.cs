@@ -14,5 +14,8 @@ namespace WebApplication5.Models
         public string OS { get; set; }
         public string Description { get; set; }
         public int YearOfRelease { get; set; }
+        //public string Country { get; set; }
+        //public int Garanty { get; set; }
+
     }
 }
