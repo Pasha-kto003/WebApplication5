@@ -33,7 +33,7 @@ namespace WebApplication5.Controllers
                 User user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                 if (user == null)
                 {
-                    // добавляем пользователя в бд
+                    
                     user = new User { Email = model.Email, Password = model.Password };
                     Role userRole = await _context.Roles.FirstOrDefaultAsync(r => r.Name == "user");
                     if (userRole != null)
@@ -92,12 +92,20 @@ namespace WebApplication5.Controllers
             await HttpContext.SignOutAsync("Cookies");
             return RedirectToAction("Login", "Account");
         }
+        //[HttpGet]
+        //public IActionResult Personal_Area()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+
         [Authorize(Roles = "admin, user")]
-        public async Task<IActionResult> Personal_Area(int? id)
+        public async Task<IActionResult> Personal_Area()
         {
-            if (id != null)
+            var email = User.Identity.Name;
+            if (email != null)
             {
-                User user = await _context.Users.FirstOrDefaultAsync(p => p.Id == id);
+                User user = await _context.Users.FirstOrDefaultAsync(p => p.Email == email);
                 if (user != null)
                     return View(user);
             }
