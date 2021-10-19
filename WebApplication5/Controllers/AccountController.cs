@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -90,6 +91,17 @@ namespace WebApplication5.Controllers
         {
             await HttpContext.SignOutAsync("Cookies");
             return RedirectToAction("Login", "Account");
+        }
+        [Authorize(Roles = "admin, user")]
+        public async Task<IActionResult> Personal_Area(int? id)
+        {
+            if (id != null)
+            {
+                User user = await _context.Users.FirstOrDefaultAsync(p => p.Id == id);
+                if (user != null)
+                    return View(user);
+            }
+            return NotFound();
         }
     }
 }
