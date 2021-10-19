@@ -86,5 +86,10 @@ namespace WebApplication5.Controllers
                 ClaimsIdentity.DefaultRoleClaimType);       
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync("Cookies");
+            return RedirectToAction("Login", "Account");
+        }
     }
 }

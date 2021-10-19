@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -27,8 +28,7 @@ namespace WebApplication5.Controllers
         {
             string role = User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value;
             ViewData["content"] = $"Теперь ваша роль {role}";
-            return View(await db.Phones.ToListAsync());
-
+            return View(await db.Users.ToListAsync());
         }
         [Authorize(Roles = "admin")]
         public IActionResult Create()
@@ -111,5 +111,12 @@ namespace WebApplication5.Controllers
         {
             return View();
         }
+
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Phone()
+        {
+            return View(await db.Phones.ToListAsync());
+        }
+
     }
 }
