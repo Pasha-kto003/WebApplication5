@@ -30,26 +30,29 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacts">My contacts</a>
                         </li>
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Logout (@User.Identity.Name)</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
-                            </li>
-                        }
-
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Phone">Phones</a>
                         </li>
                         <li>
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Personal_Area">Your account</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Information">Information for Pushkin</a>
                         </li>
                     </ul>
+                    <div class="dropdown">
+                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Registration
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            @if (User.Identity.IsAuthenticated)
+                            {                               
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout (@User.Identity.Name)</a>                                
+                            }
+                            else
+                            {                               
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="Login">Login</a>                                
+                            }
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Personal_Area">Your account</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
