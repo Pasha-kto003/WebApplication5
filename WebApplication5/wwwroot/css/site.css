@@ -18,6 +18,26 @@ a {
   border-color: #1861ac;
 }
 
+.rating-mini {
+    display: inline-block;
+    font-size: 0;
+}
+
+.rating-mini span {
+        padding: 0;
+        font-size: 20px;
+        line-height: 1;
+        color: lightgrey;
+}
+
+.rating-mini > span:before {
+        content: '★';
+}
+
+.rating-mini > span.active {
+        color: gold;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;

@@ -15,10 +15,20 @@
                         <a href="#">@item.Name</a>
                     </h4>
                     <h5>@item.Price &#8381</h5>
+
+                    <div class="rating-mini">
+                        <span class="active">★</span>
+                        <span class="active">★</span>
+                        <span class="active">★</span>
+                        <span></span>
+                        <span></span>
+                    </div>
                     <p class="card-text">@item.Description</p>
                     <a asp-action="Details" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
                     <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
                     <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
+
+                    <a href="#" class="btn btn-primary">Купить</a>
                 </div>
             </div>
         </div>
