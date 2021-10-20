@@ -92,13 +92,6 @@ namespace WebApplication5.Controllers
             await HttpContext.SignOutAsync("Cookies");
             return RedirectToAction("Login", "Account");
         }
-        //[HttpGet]
-        //public IActionResult Personal_Area()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-
         [Authorize(Roles = "admin, user")]
         public async Task<IActionResult> Personal_Area()
         {

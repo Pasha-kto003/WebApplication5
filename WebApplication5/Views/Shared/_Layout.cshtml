@@ -27,18 +27,21 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacts">My contacts</a>
+                        </li>
                         @if (User.Identity.IsAuthenticated)
-            {
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Logout (@User.Identity.Name)</a>
-                </li>
-            }
-            else
-            {
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
-                    </li>
-            }
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Logout (@User.Identity.Name)</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                        }
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Phone">Phones</a>

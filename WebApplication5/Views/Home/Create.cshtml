@@ -4,11 +4,12 @@
 @{
     ViewBag.Title = "Добавление телфона";
 }
+
 <div class="container text-center align-middle d-flex justify-content-center">
     <form asp-action="create" asp-controller="home">
         <div class="form-group">
-            <label asp-for="Model" class="control-label">Название модели</label>
-            <input type="text" asp-for="Model" class="form-control" />
+            <label asp-for="Name" class="control-label">Название модели</label>
+            <input type="text" asp-for="Name" class="form-control" />
         </div>
         <div class="form-group">
             <label asp-for="Company" class="control-label">Компания</label>
@@ -26,6 +27,39 @@
             <label asp-for="Description" class="control-label">Описание</label>
             <input type="text" asp-for="Description" class="form-control" />
         </div>
+        <div class="form-group">
+            <label asp-for="Country" class="control-label">Страна</label>
+            <input type="text" asp-for="Country" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Garanty" class="control-label">Гарантия</label>
+            <input type="text" asp-for="Garanty" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Diagonal" class="control-label">Диагональ</label>
+            <input type="text" asp-for="Diagonal" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Processor" class="control-label">Процессор</label>
+            <input type="text" asp-for="Processor" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Count_kernels" class="control-label">Количество ядер</label>
+            <input type="text" asp-for="Count_kernels" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Bluetooth" class="control-label">Версия блютуза</label>
+            <input type="text" asp-for="Bluetooth" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="NFC" class="control-label">NFC</label>
+            <input type="text" asp-for="NFC" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Battery_Capacity" class="control-label">Емкость батареи</label>
+            <input type="text" asp-for="Battery_Capacity" class="form-control" />
+        </div>
+
         <div class="form-group">
             <label asp-for="YearOfRelease" class="control-label">Год выпуска</label>
             <input type="number" asp-for="YearOfRelease" class="form-control" />
@@ -46,7 +80,7 @@
                         Вы уверены что хотите создать телефон
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-secondary" value="Закрыть" data-dismiss="modal"/>
+                        <input type="button" class="btn btn-secondary" value="Закрыть" data-dismiss="modal" />
                         <input type="submit" value="Создать телефон" class="btn btn-secondary" role="button" />
                     </div>
                 </div>

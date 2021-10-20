@@ -3,5 +3,13 @@
 
 // Write your JavaScript code.
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
+	$('[data-toggle="tooltip"]').tooltip()
+});
+
+$('body').on('click', '.password-checkbox', function () {
+	if ($(this).is(':checked')) {
+		$('#password-input').attr('type', 'text');
+	} else {
+		$('#password-input').attr('type', 'password');
+	}
+});

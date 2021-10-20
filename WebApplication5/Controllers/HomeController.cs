@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -108,6 +111,12 @@ namespace WebApplication5.Controllers
 
         [Authorize(Roles = "admin, user")]
         public IActionResult About()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "admin, user")]
+        public IActionResult Contacts()
         {
             return View();
         }

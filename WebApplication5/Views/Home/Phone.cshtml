@@ -4,17 +4,37 @@
 }
 <h4>@ViewData["content"]</h4>
 <a asp-action="Create">Добавить телефон</a>
-<table class="table">
-
+<div class="row">
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.Model</td>
-            <td>
-                <a asp-action="Details" class="alert alert-success" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
-                <a asp-action="Edit" class="alert alert-warning" role="alert" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
-                <a asp-action="Delete" class="alert alert-danger" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
-            </td>
-        </tr>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">@item.Name</a>
+                    </h4>
+                    <p class="card-text">@item.Description</p>
+                    <a asp-action="Details"  asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
+                    <a asp-action="Edit"   asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
+                    <a asp-action="Delete"  asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
+                </div>
+            </div>
+        </div>
     }
-</table>
+</div>
+
+    @*<table class="table">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        <a asp-action="Details" class="alert alert-success" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
+                        <a asp-action="Edit" class="alert alert-warning" role="alert" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
+                        <a asp-action="Delete" class="alert alert-danger" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </table>*@
