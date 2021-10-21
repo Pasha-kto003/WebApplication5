@@ -12,6 +12,9 @@ namespace WebApplication5.Models
         public string Company { get; set; }
         public decimal Price { get; set; }
         public string OS { get; set; }
+        public int Memory { get; set; }
+        public string Screen_resolution { get; set; }
+        public string Camera_resolution { get; set; }
         public string Description { get; set; }
         public int YearOfRelease { get; set; }
         public string Country { get; set; }
@@ -22,5 +25,7 @@ namespace WebApplication5.Models
         public int Bluetooth { get; set; }
         public string NFC { get; set; }
         public int Battery_Capacity { get; set; }
+        public string PhotoPath { get; set; }
+        public string Complect { get; set; }
     }
 }

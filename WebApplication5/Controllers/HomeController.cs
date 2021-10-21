@@ -132,5 +132,10 @@ namespace WebApplication5.Controllers
         {
             return View();
         }
+        [Authorize(Roles = "admin, user")]
+        public IActionResult Payment()
+        {
+            return View();
+        }
     }
 }

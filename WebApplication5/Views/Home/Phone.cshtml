@@ -12,6 +12,8 @@
 
                 <div class="card-body">
                     <h4 class="card-title">
+                        <img src="@item.PhotoPath" style="width:100px; height:100px;"/>
+                        <br />
                         <a href="#">@item.Name</a>
                     </h4>
                     <h5>@item.Price &#8381</h5>
@@ -28,7 +30,7 @@
                     <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
                     <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
 
-                    <a href="#" class="btn btn-primary">Купить</a>
+                    <a href="/Home/Payment" class="btn btn-primary">Купить</a>
                 </div>
             </div>
         </div>

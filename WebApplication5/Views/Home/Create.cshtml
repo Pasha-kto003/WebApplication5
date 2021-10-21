@@ -59,10 +59,29 @@
             <label asp-for="Battery_Capacity" class="control-label">Емкость батареи в Ma * ч</label>
             <input type="text" asp-for="Battery_Capacity" class="form-control" />
         </div>
-
+        <div class="form-group">
+            <label asp-for="Complect" class="control-label">В комплекте также идет</label>
+            <input type="text" asp-for="Complect" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Memory" class="control-label">Память в GB</label>
+            <input type="number" asp-for="Memory" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Screen_resolution" class="control-label">Разрешение экрана</label>
+            <input type="text" asp-for="Screen_resolution" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Camera_resolution" class="control-label">Разрешение камеры</label>
+            <input type="text" asp-for="Screen_resolution" class="form-control" />
+        </div>
         <div class="form-group">
             <label asp-for="YearOfRelease" class="control-label">Год выпуска</label>
             <input type="number" asp-for="YearOfRelease" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="PhotoPath" class="control-label">Фотография</label>
+            <input type="text" asp-for="PhotoPath" class="form-control" />
         </div>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Создать телефон

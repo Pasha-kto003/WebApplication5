@@ -12,9 +12,10 @@
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div>
-                <label asp-for="Password">Введите пароль</label><br />
-                <input class="form-control" id="exampleInputPassword1" asp-for="Password" />
+                <h5 class="h3 mb-3 font-weight-normal">Введите пароль</h5>
+                <input type="password" id="password-input" class="form-control" placeholder="Введите пароль" asp-for="Password" />
                 <span asp-validation-for="Password" />
+                <label><input type="checkbox" class="password-checkbox" />Показать пароль</label>
                 <small id="emailHelp" class="form-text text-muted">Your password is our.</small>
             </div>
             <div>
