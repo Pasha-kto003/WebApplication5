@@ -52,9 +52,9 @@
             <input type="text" asp-for="Bluetooth" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="NFC" class="control-label">NFC</label>
-            <input type="text" asp-for="NFC" class="form-control" />
-        </div>
+            <label asp-for="NFC" data-toggle="tooltip" data-placement="left" title="Система бесконтактной оплаты">NFC</label>
+                <input type="text" asp-for="NFC" class="form-control" />
+</div>
         <div class="form-group">
             <label asp-for="Battery_Capacity" class="control-label">Емкость батареи в Ma * ч</label>
             <input type="text" asp-for="Battery_Capacity" class="form-control" />
@@ -64,7 +64,7 @@
             <input type="text" asp-for="Complect" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="Memory" class="control-label">Память в GB</label>
+            <label asp-for="Memory" class="control-label">Встроенная память в GB</label>
             <input type="number" asp-for="Memory" class="form-control" />
         </div>
         <div class="form-group">
@@ -80,7 +80,7 @@
             <input type="number" asp-for="YearOfRelease" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="PhotoPath" class="control-label">Фотография</label>
+            <label asp-for="PhotoPath"  data-toggle="tooltip" data-placement="left" title="Вставьте сюда ссылку на фотографию из интернета (еще не разобрался с файловой системой)" class="control-label">Фотография</label>
             <input type="text" asp-for="PhotoPath" class="form-control" />
         </div>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
