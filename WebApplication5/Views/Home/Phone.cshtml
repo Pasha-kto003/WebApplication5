@@ -12,7 +12,7 @@
 
                 <div class="card-body">
                     <h4 class="card-title">
-                        <img src="@item.PhotoPath" style="width:100px; height:100px;"/>
+                        <img src="@item.PhotoPath" style="width:100px; height:100px;" />
                         <br />
                         <a href="#">@item.Name</a>
                     </h4>
@@ -30,24 +30,43 @@
                     <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
                     <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
 
-                    <a href="/Home/Payment" class="btn btn-primary">Купить</a>
+                    <button style="margin-top:10px;" type="button"
+                            class="btn-ens-action btn-ens-style"
+                            data-rel="4a9f99dc105">
+                        Купить
+                    </button>
                 </div>
             </div>
         </div>
     }
 </div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script defer src="//lk.easynetshop.ru/frontend/v5/test.js"></script>
+<link href="//lk.easynetshop.ru/frontend/v5/test.css" rel="stylesheet">
+<style>
+    #enscart_wrapper #enscart_image_wrapper {
+        background-color: #1170bb;
+    }
 
-    @*<table class="table">
+    #easynetshop-cart-default #enscart_wrapper {
+        top: auto;
+        right: auto;
+        left: 10px;
+        bottom: 20px;
+    }
+</style>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>
-                        <a asp-action="Details" class="alert alert-success" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
-                        <a asp-action="Edit" class="alert alert-warning" role="alert" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
-                        <a asp-action="Delete" class="alert alert-danger" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
-                    </td>
-                </tr>
-            }
-        </table>*@
+@*<table class="table">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    <a asp-action="Details" class="alert alert-success" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
+                    <a asp-action="Edit" class="alert alert-warning" role="alert" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
+                    <a asp-action="Delete" class="alert alert-danger" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
+                </td>
+            </tr>
+        }
+    </table>*@

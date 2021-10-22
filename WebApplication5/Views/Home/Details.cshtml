@@ -34,7 +34,7 @@
                     <dd>@Model.Count_kernels</dd>
                     <dt>Версия блютуза</dt>
                     <dd>@Model.Bluetooth</dd>
-                    <dt>NFC</dt>
+                    <dt data-toggle="tooltip" data-placement="left" title="Система бесконтактной оплаты">NFC</dt>
                     <dd>@Model.NFC</dd>
                     <dt>В комплекте также идет</dt>
                     <dd>@Model.Complect</dd>
@@ -43,7 +43,7 @@
                 </dl>
         </div>
         <div class="col-lg-7 mb-4">
-            <img src="@Model.PhotoPath"/>
+            <img style="width:400px; height:432px;" src="@Model.PhotoPath"/>
         </div>
 </div>
 </div>
