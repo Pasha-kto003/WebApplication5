@@ -127,13 +127,8 @@ namespace WebApplication5.Controllers
             return View(await db.Phones.ToListAsync());
         }
 
-        [Authorize(Roles = "admin, user")]
+        
         public IActionResult Information()
-        {
-            return View();
-        }
-        [Authorize(Roles = "admin, user")]
-        public IActionResult Payment()
         {
             return View();
         }
