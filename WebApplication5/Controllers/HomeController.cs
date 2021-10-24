@@ -127,7 +127,30 @@ namespace WebApplication5.Controllers
             return View(await db.Phones.ToListAsync());
         }
 
-        
+        public IActionResult AddBuy(int? id)
+        {
+            var email = User.Identity.Name;
+            if(id != null)
+            {
+                User user = db.Users.FirstOrDefault(p => p.Email == email);
+                Phone phone = db.Phones.FirstOrDefault(p => p.ID == id);
+                Buy buy = new Buy { PhoneID = phone.ID, UserID = user.Id };
+                db.Buys.Add(buy);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            return NotFound();
+            
+        }
+        [Authorize(Roles ="admin")]
+        public IActionResult Buy()
+        {
+            List<Phone> Phones = db.Phones.ToList();
+            List<User> Users = db.Users.ToList();
+            return View(db.Buys.ToList());
+        }
+
+
         public IActionResult Information()
         {
             return View();

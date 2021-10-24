@@ -3,13 +3,12 @@
     ViewBag.Title = "Весь каталог";
 }
 <h4>@ViewData["content"]</h4>
-<a asp-action="Create">Добавить телефон</a>
+<a class="atuin-btn" asp-action="Create">Добавить телефон</a>
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-lg-4 col-sm-6 portfolio-item" style="margin-top:10px;">
-            <div class="card h-100">
-
+        <div class="corner-box-1 card col-sm-3 m-1" style=" width: 18rem; margin-top: 10px;">
+            <div class="corner-box-1-content">
                 <div class="card-body">
                     <h4 class="card-title">
                         <img src="@item.PhotoPath" style="width:100px; height:100px;" />
@@ -25,36 +24,18 @@
                         <span></span>
                         <span></span>
                     </div>
-                    <p class="card-text">@item.Description</p>
-                    <a asp-action="Details" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
-                    <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
-                    <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
 
-                    <button style="margin-top:10px;" type="button"
-                            class="btn-ens-action btn-ens-style"
-                            data-rel="4a9f99dc105">
-                        Купить
-                    </button>
+                    <p class="card-text">@item.Description</p>
+                    <a  asp-action="Details" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
+                    <a  asp-action="Edit" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
+                    <a  asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a> |
+                    <a  asp-action="AddBuy" asp-controller="Home" asp-route-id="@item.ID">Купить</a>
                 </div>
             </div>
         </div>
     }
 </div>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script defer src="//lk.easynetshop.ru/frontend/v5/test.js"></script>
-<link href="//lk.easynetshop.ru/frontend/v5/test.css" rel="stylesheet">
-<style>
-    #enscart_wrapper #enscart_image_wrapper {
-        background-color: #1170bb;
-    }
 
-    #easynetshop-cart-default #enscart_wrapper {
-        top: auto;
-        right: auto;
-        left: 10px;
-        bottom: 20px;
-    }
-</style>
 
 @*<table class="table">
 

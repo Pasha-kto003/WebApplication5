@@ -1,0 +1,17 @@
+﻿
+@model IEnumerable<WebApplication5.Models.Buy> 
+@{
+    ViewBag.Title = "Ваш заказ";
+}
+
+<table class="table">
+    @foreach(var item in Model)
+    {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.DateBuy</td>
+        <td>@item.Phone.Name</td>
+        <td>@item.Phone.Price</td>
+    </tr>
+    }
+</table>
