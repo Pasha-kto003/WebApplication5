@@ -13,3 +13,4 @@ $('body').on('click', '.password-checkbox', function () {
 		$('#password-input').attr('type', 'password');
 	}
 });
+
