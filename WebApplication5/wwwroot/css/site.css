@@ -418,6 +418,38 @@ path#f2-l5 {
     padding-bottom: 40px;
 }
 
+.banner-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    margin: 20px 0;
+}
+
+.banner {
+    position: absolute;
+    overflow: hidden;
+}
+
+    .banner.dev {
+        transform: skew(-30deg);
+        margin-left: -200px;
+        width: calc(50% + 200px);
+        transition: all 300ms ease-out;
+    }
+
+        .banner.dev .banner-content {
+            transform: skew(30deg);
+            margin-left: 200px;
+        }
+
+    .banner .banner-content {
+        height: 500px;
+    }
+
+        .banner .banner-content img {
+            max-width: none;
+        }
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
