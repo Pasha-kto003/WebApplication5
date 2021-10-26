@@ -121,8 +121,13 @@ namespace WebApplication5.Controllers
             return View();
         }
 
-        [Authorize(Roles = "admin, user")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Phone()
+        {
+            return View(await db.Phones.ToListAsync());
+        }
+
+        public async Task<IActionResult> Phones()
         {
             return View(await db.Phones.ToListAsync());
         }
