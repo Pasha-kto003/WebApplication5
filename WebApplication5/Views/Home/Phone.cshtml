@@ -3,7 +3,10 @@
     ViewBag.Title = "Весь каталог";
 }
 <h4>@ViewData["content"]</h4>
-<a class="atuin-btn" asp-action="Create">Добавить телефон</a>
+@if (User.IsInRole("admin"))
+{
+    <a class="atuin-btn" asp-action="Create">Добавить телефон</a>
+}
 <div class="row">
     @foreach (var item in Model)
     {
@@ -26,10 +29,14 @@
                     </div>
 
                     <p class="card-text">@item.Description</p>
-                    <a  asp-action="Details" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a> |
-                    <a  asp-action="Edit" asp-controller="Home" asp-route-id="@item.ID">Изменить</a> |
-                    <a  asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a> |
-                    <a  asp-action="AddBuy" asp-controller="Home" asp-route-id="@item.ID">Купить</a>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <a asp-action="Details" asp-controller="Home" asp-route-id="@item.ID">Подробнее</a>
+                        <a asp-action="Edit" asp-controller="Home" asp -route-id="@item.ID">Изменить</a>
+                        <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
+
+                    }
+                    <a asp-action="AddBuy" asp-controller="Home" asp-route-id="@item.ID"> Купить</a>
                 </div>
             </div>
         </div>
