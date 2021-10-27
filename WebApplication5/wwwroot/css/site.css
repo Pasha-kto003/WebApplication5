@@ -398,7 +398,7 @@ path#f2-l5 {
     text-align: center;
     font-size: 22px;
     font-family: 'Roboto Condensed', sans-serif;
-    color: #000;
+    color: #E6E6FA;
 }
 
 .section-color {
@@ -409,11 +409,11 @@ path#f2-l5 {
     background-position: center bottom;
     padding-top: 40px;
     padding-bottom: 100px;
-    color: #FFF;
+    color: #E6E6FA;
 }
 
 .section-no {
-    background-color: #FFF;
+    background-color: #E6E6FA;
     padding-top: 40px;
     padding-bottom: 40px;
 }
