@@ -127,11 +127,6 @@ namespace WebApplication5.Controllers
             return View(await db.Phones.ToListAsync());
         }
 
-        public async Task<IActionResult> Phones()
-        {
-            return View(await db.Phones.ToListAsync());
-        }
-
         public IActionResult AddBuy(int? id)
         {
             var email = User.Identity.Name;
