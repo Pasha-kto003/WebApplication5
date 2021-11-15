@@ -5,14 +5,24 @@
 }
 
 <table class="table">
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
-    <tr>
-        <td>@item.ID</td>
-        <td>@item.User.Email</td>
-        <td>@item.DateBuy</td>
-        <td>@item.Phone.Name</td>
-        <td>@item.Phone.Price</td>
-    </tr>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Время покупки</th>
+                <th scope="col">Модель телефона</th>
+                <th scope="col">Стоимость покупки</th>
+
+            </tr>
+        </thead>
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.User.Email</td>
+            <td>@item.DateBuy</td>
+            <td>@item.Phone.Name</td>
+            <td>@item.Phone.Price</td>
+        </tr>
     }
 </table>

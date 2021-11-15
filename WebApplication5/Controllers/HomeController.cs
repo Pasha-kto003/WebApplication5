@@ -39,6 +39,12 @@ namespace WebApplication5.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Users()
+        {
+            return View(await db.Users.ToListAsync());
+        }
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id != null)
