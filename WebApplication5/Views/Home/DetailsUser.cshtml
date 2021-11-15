@@ -1,0 +1,17 @@
+﻿@model WebApplication5.Models.User
+@{
+    ViewBag.Title = Model.Email;
+}
+<h2>Пользователь @Model.Email</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Идентификатор</dt>
+        <dd>@Model.Id</dd>
+
+        <dt>Email</dt>
+        <dd>@Model.Email</dd>
+
+        <dt>Пароль</dt>
+        <dd>@Model.Password</dd>
+    </dl>
+</div>

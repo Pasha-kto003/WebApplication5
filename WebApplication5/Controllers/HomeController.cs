@@ -161,5 +161,73 @@ namespace WebApplication5.Controllers
         {
             return View();
         }
+
+        [Authorize(Roles = "admin")]
+        public IActionResult CreateUser()
+        {
+            return View();
+        }
+        [HttpPost, Authorize(Roles = "admin")]
+        public async Task<IActionResult> CreateUser(User user)
+        {
+            user.Role = await db.Roles.FirstOrDefaultAsync(p => p.Name == "user");
+            db.Users.Add(user);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> EditUser(int? id)
+        {
+            if (id != null)
+            {
+                User user = await db.Users.FirstOrDefaultAsync(p => p.Id == id);
+                if (id == 1)
+                {
+                    return RedirectToAction("Index");
+                }
+                if (user != null)
+                    return View(user);
+            }
+            return NotFound();
+        }
+
+        [HttpPost, Authorize(Roles = "admin")]
+        public async Task<IActionResult> EditUser(User user)
+        {
+            user.Role = await db.Roles.FirstOrDefaultAsync(p => p.Name == "user");
+            db.Users.Update(user);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> DetailsUser(int? id)
+        {
+            if (id != null)
+            {
+                User phone = await db.Users.FirstOrDefaultAsync(p => p.Id == id);
+                if (phone != null)
+                    return View(phone);
+            }
+            return NotFound();
+        }
+        [Authorize(Roles = "admin")]
+        public IActionResult DeleteUser()
+        {
+            return View();
+        }
+        [HttpPost, Authorize(Roles = "admin")]
+        public async Task<IActionResult> DeleteUser(int? id)
+        {
+            if (id != null)
+            {
+                User user = new User { Id = id.Value };
+                db.Entry(user).State = EntityState.Deleted;
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
     }
 }

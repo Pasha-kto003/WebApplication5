@@ -3,21 +3,17 @@
     ViewBag.Title = "Все пользователи сайта";
 
 }
+<a asp-action="CreateUser">Добавить пользователя</a>
 <table class="table">
-
     @foreach (var item in Model)
     {
-        <thead>
-            <tr>
-                <th scope="col">Email</th>
-                <th scope="col">Пароль</th>
-                <th scope="col">Роль</th>
-            </tr>
-        </thead>
         <tr>
             <td>@item.Email</td>
-            <td>@item.Password</td>
-            <td>@item.Role</td>
+            <td>
+                <a asp-action="DetailsUser" asp-controller="Home" asp-route-id="@item.Id">Подробнее</a> |
+                <a asp-action="EditUser" asp-controller="Home" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-action="DeleteUser" asp-controller="Home" asp-route-id="@item.Id">Удалить</a>
+            </td>
         </tr>
     }
 </table>
