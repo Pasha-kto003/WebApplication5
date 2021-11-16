@@ -10,8 +10,11 @@
 
         <dt>Email</dt>
         <dd>@Model.Email</dd>
-
-        <dt>Пароль</dt>
-        <dd>@Model.Password</dd>
     </dl>
+    <div class="form-group">
+        <h5 class="h3 mb-3 font-weight-normal">Это ваш пароль</h5>
+        <input type="password" id="password-input" value="@Model.Password" readonly class="form-control" style="width:250px;" placeholder="Введите пароль" asp-for="Password" />
+        <span asp-validation-for="Password" />
+        <label><input type="checkbox" class="password-checkbox" />Показать пароль</label>
+    </div>
 </div>

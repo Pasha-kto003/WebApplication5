@@ -173,7 +173,7 @@ namespace WebApplication5.Controllers
             user.Role = await db.Roles.FirstOrDefaultAsync(p => p.Name == "user");
             db.Users.Add(user);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("Users");
         }
 
         [Authorize(Roles = "admin")]
