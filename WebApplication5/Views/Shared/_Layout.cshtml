@@ -9,8 +9,8 @@
     <link rel="shortcut icon" href="~/img/phone.png"/>
 </head>
 <body style="background-color: #E6E6FA; ">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header style="background-color: #E6E6FA">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication5</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -38,12 +38,22 @@
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Information">Information for Pushkin</a>
                         </li>
                         <li>
-                            <a class="nav-link text-dark" asp-action="Buy" asp-controller="Home">Покупка</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Email">Email</a> 
                         </li>
-                        <li>
-                            <a class="nav-link text-dark" asp-action="Users" asp-controller="Home">Пользователи</a>
-                        </li>
-                    </ul>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li>
+                                <a class="nav-link text-dark" asp-action="Buy" asp-controller="Home">Sale</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("admin"))
+                         {
+                                <li>
+                                    <a class="nav-link text-dark" asp-action="Users" asp-controller="Home">Users</a>
+                                </li>
+                         }
+                        </ul>
+                        
                     <div class="dropdown">
                         <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Registration

@@ -13,6 +13,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using WebApplication5.Models;
+using System.Net;
+using System.Net.Mail;
 
 namespace WebApplication5.Controllers
 {
@@ -108,8 +110,7 @@ namespace WebApplication5.Controllers
         [HttpPost]
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create(Phone phone)
-        {
-          
+        {       
             db.Phones.Add(phone);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -229,5 +230,40 @@ namespace WebApplication5.Controllers
             }
             return NotFound();
         }
+
+        public IActionResult Email()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Email(EmailModel model)
+        {
+            using (MailMessage mm = new MailMessage(model.Email, model.To))
+            {
+                mm.Subject = model.Subject;
+                mm.Body = model.Body;
+                if (model.Attachment.Length > 0)
+                {
+                    string fileName = Path.GetFileName(model.Attachment.FileName);
+                    mm.Attachments.Add(new Attachment(model.Attachment.OpenReadStream(), fileName));
+                }
+                mm.IsBodyHtml = false;
+                using (SmtpClient smtp = new SmtpClient())
+                {
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    NetworkCredential NetworkCred = new NetworkCredential(model.Email, model.Password);
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = NetworkCred;
+                    smtp.Port = 587;
+                    smtp.Send(mm);
+                    ViewBag.Message = "Email sent.";
+                }
+            }
+
+            return View();
+        }
     }
 }
+
