@@ -16,68 +16,100 @@
     </style>
 </head>
 <body>
-    <div>
-        @using (Html.BeginForm("Email", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <table class="table" border="0" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td style="width: 80px">
-                        To:
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(model => model.To)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Subject:
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(model => model.Subject)
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        Body:
-                    </td>
-                    <td>
-                        @Html.TextAreaFor(model => model.Body, new { rows = "3", cols = "20" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        File Attachment:
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(model => model.Attachment, new { type = "file" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Gmail Email:
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(model => model.Email)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Gmail Password:
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(model => model.Password, new { type = "password" })
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Send" />
-                    </td>
-                </tr>
-            </table>
-            <br />
-            <span style="color:green">@ViewBag.Message</span>
-        }
-    </div>
+    <div class="container">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 mb-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.461126693014!2d131.9310178619084!3d43.15784388758436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fb39163cd1e50c3%3A0x75f042b297532d03!2z0YPQuy4g0KLRg9GF0LDRh9C10LLRgdC60L7Qs9C-LCAyNiwg0JLQu9Cw0LTQuNCy0L7RgdGC0L7Quiwg0J_RgNC40LzQvtGA0YHQutC40Lkg0LrRgNCw0LksIDY5MDA4OQ!5e0!3m2!1sru!2sru!4v1634778316452!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <h3>Обратная связь</h3>
+                    <p>
+                        Россия
+                        <br>Владивосток, Тухачевского 26
+                        <br>
+                    </p>
+                    <p>
+                        <span title="Phone">P</span>: 8-(924)-940-69-98
+                    </p>
+                    <p>
+                        <span title="Email">E</span>:
+                        <a href="lukovnikov.pasha@mail.com">
+                            lukovnikov.pasha@mail.com
+                        </a>
+                    </p>
+                    <p>
+                        <span title="Hours">H</span>: Понедельник - Пятница: 9:00 до 18:00
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            @using (Html.BeginForm("Email", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <table class="table" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="width: 80px">
+                            Кому:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.To)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Титульник письма:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Subject)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            Письмо:
+                        </td>
+                        <td>
+                            @Html.TextAreaFor(model => model.Body, new { rows = "3", cols = "20" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Обязательно прикрепи файл:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Attachment, new { type = "file" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Твой Gmail:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Email)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Твой Gmail пароль:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Password, new { type = "password" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Send" />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <span style="color:green">@ViewBag.Message</span>
+            }
+        </div>
 </body>
 </html>

@@ -243,7 +243,7 @@ namespace WebApplication5.Controllers
             {
                 mm.Subject = model.Subject;
                 mm.Body = model.Body;
-                if (model.Attachment.Length > 0)
+                if (model.Attachment != null)
                 {
                     string fileName = Path.GetFileName(model.Attachment.FileName);
                     mm.Attachments.Add(new Attachment(model.Attachment.OpenReadStream(), fileName));
